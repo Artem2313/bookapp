@@ -9,7 +9,7 @@ body {
   margin-bottom: 1rem;
 }
 
-.book.finished span {
+.book.completed span {
   text-decoration: line-through;
 }
 
