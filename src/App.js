@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
+//40) добавим useReducer в Апп и создаем редьюсер в корне папки
 import BookList from "./BookList";
 
 // 27) Передаем контекст
 import { Context } from "./Context";
-
+//42) Импортируем редьюсер
+import reducer from "./reducer";
 /*
 1) Заменить Апп на конст Апп, а также убрать наследование от компонента
 2) Удалим компонент и исправим сам Апп
@@ -11,6 +13,9 @@ import { Context } from "./Context";
 */
 
 const App = () => {
+  //43) вызовем хук useReducer, где в первый компонент передадим наш редьюсер, а во второй начальный стейт
+  // хук useReducer возвращает один параметр, который представлен в виде массива, где первый эл state, а его можно менять с помощью втор эл. dispatch
+  const [state, dispatch] = useReducer(reducer, []);
   // 3) Комментим стейт и убираем рендер, а оставляем ретерн с шаблоном jsx
   // state = {
   //   books: [
@@ -26,12 +31,13 @@ const App = () => {
   // передаем начальное состояние books, как было в стейте
   // 6) Передаем books в компонент без this.state. Если посмотреть в браузер, то состояние не изменилось, но мы теперь юзаем только функц. компонент
 
-  const [books, setBooks] = useState([
-    //21) Поработаем немного с UseEffect, а именно с localstorage - уберем локальный стейт
-    // { id: 1, title: "Beauty and the Beast" },
-    // { id: 2, title: "Cinderella" },
-    // { id: 3, title: "The Little Mermaid" },
-  ]);
+  // 44) Если мы используем редьюсер, то useState уже не нужен, удалим его
+  // const [books, setBooks] = useState([
+  //   //21) Поработаем немного с UseEffect, а именно с localstorage - уберем локальный стейт
+  //   // { id: 1, title: "Beauty and the Beast" },
+  //   // { id: 2, title: "Cinderella" },
+  //   // { id: 3, title: "The Little Mermaid" },
+  // ]);
 
   // 7) Сейчас мы добавим новый UseState для тайтла чтобы обработать инпут
   const [bookTitle, setBookTitle] = useState("");
@@ -61,7 +67,7 @@ const App = () => {
     // Если в массив зависимостей мы передадим какую-то часть стейта, то на каждое ее изменение будет вызываться и UseEffect
     // например, добавим bookTitle в зависимости, и посмотрим, что будет выводить консоль лог
 
-    [books]
+    []
   );
 
   // 9) Реализовываем функц addBook
