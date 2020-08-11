@@ -13,9 +13,9 @@ export default class App extends Component {
     return (
       <div className="container">
         <h1>Bookapp</h1>
-        <div className="input-container">
+        <div className="input-field">
           <input type="text" />
-          <label>Book's Title</label>
+          <label className="active">Book's Title</label>
         </div>
         <BookList books={this.state.books} />
       </div>

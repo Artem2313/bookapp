@@ -4,7 +4,7 @@ const SingleBook = ({ title, id, finished }) => (
     <label>
       <input type="checkbox" defaultChecked={false} />
       <span>{title}</span>
-      <button type="button" class="waves-effect waves-light btn">
+      <button type="button" className="waves-effect waves-light btn">
         Delete
       </button>
     </label>
