@@ -1,5 +1,5 @@
 import React from "react";
-const SingleBook = ({ title, id, finished }) => (
+const SingleBook = ({ title, id, completed }) => (
   <li className="book">
     <label>
       <input type="checkbox" defaultChecked={false} />
