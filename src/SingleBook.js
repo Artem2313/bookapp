@@ -21,7 +21,7 @@ const SingleBook = ({ title, id, completed }) => {
     //19.1) добавим onChange, куда инвертируем событие setChecked(!checked)}
     //   onChange={() => setChecked(!checked)}
     //20) Возвращаемся в Апп, на этом работа с useState закончена
-    <li className={completed.join(" ")}>
+    <li className={checking.join(" ")}>
       <label>
         <input
           type="checkbox"
