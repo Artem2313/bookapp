@@ -10,11 +10,11 @@ const SingleBook = ({ title, id, completed }) => {
   }
 
   return (
-    <li className="book">
+    <li className={checking.join(" ")}>
       <label>
         <input
           type="checkbox"
-          checked={completed}
+          checked={checked}
           onChange={() => setChecked(!checked)}
         />
         <span>{title}</span>
