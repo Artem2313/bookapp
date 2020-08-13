@@ -29,7 +29,6 @@ const App = () => {
     }
   };
 
-  // 30) Создадим две функции, одна в ответе за удаление книги
   const delBook = (id) => {
     setBooks(
       books.filter((book) => {
@@ -37,7 +36,6 @@ const App = () => {
       })
     );
   };
-  //31) вторая в ответе за состояние checked
 
   const toggleCheck = (id) => {
     setBooks(
@@ -50,14 +48,7 @@ const App = () => {
     );
   };
 
-  //32) передаем эти две функции в провайдер Context.Provider value={{ toggleCheck, delBook }}
-  //33) перейдем в SingleBook, чтобы получить эти функции
-
   return (
-    // 28) Оборачиваем весь шаблон в провайдер контекста <Context.Provider>
-    //29) передаем значение value, которые будут содержать в себе функции для изменения главного стейт value={{}}
-    //29.1) Получаем контекст в SingleBook,будущие функции тоггле и удаления
-
     <Context.Provider value={{ toggleCheck, delBook }}>
       <div className="container">
         <h1>Bookapp</h1>
